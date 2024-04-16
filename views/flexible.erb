@@ -1,0 +1,37 @@
+<!-- /views/flexible.erb -->
+
+<table style="width: 100%" border="1">
+  <tbody>
+    <tr>
+      <td>
+        <strong>Calculators</strong>
+      </td>
+
+      <td>
+        <%= link_to 'Square with Form', new_square_path %>
+      </td>
+
+      <td>
+        <%= link_to 'Square Root with Form', new_square_root_path %>
+      </td>
+
+      <td>
+        <%= link_to 'Payment with Form', new_payment_path %>
+      </td>
+
+      <td>
+        <%= link_to 'Random with Form', new_random_path %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<%= form_with(url: square_results_path, local: true) do |form| %>
+  <div>
+    <%= form.label :number, "Enter a number" %>
+  </div>
+  <div>
+    <%= form.text_field :number, id: "user_number", placeholder: "What number do you want to take the square of?" %>
+  </div>
+  <%= form.submit "Calculate square" %>
+<% end %>
